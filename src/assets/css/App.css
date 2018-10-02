@@ -1,0 +1,460 @@
+@import url(~slick-carousel/slick/slick.css);
+@import url(~slick-carousel/slick/slick-theme.css);
+header nav {
+  font-family: 'Shadows Into Light', cursive;
+  width: 100%;
+  text-align: center;
+  align-self: center;
+  color: #DFEBE5; }
+  header nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 15px 0;
+    width: 100%;
+    font-weight: bold;
+    line-height: 3rem;
+    font-size: 2rem;
+    background-color: rgba(7, 40, 59, 0.87); }
+    header nav ul li, header nav ul button {
+      list-style: none;
+      vertical-align: middle;
+      justify-content: center;
+      width: 100%;
+      transition-property: font-size;
+      transition-duration: .5s; }
+      header nav ul li a, header nav ul li a:visited, header nav ul button a, header nav ul button a:visited {
+        line-height: 2rem;
+        color: #DFEBE5;
+        text-decoration: none; }
+    header nav ul button {
+      border: none;
+      font-family: 'Ubuntu', sans-serif;
+      color: #08283A;
+      font-weight: bold;
+      line-height: 2rem;
+      font-size: 1.25rem;
+      background-color: rgba(217, 169, 146, 0.913);
+      border-radius: 25px;
+      margin-right: 10px; }
+    header nav ul li:hover {
+      font-size: 2.5rem; }
+
+.hero, .productsHero, .contactHero, .adminHero {
+  color: #DFEBE5;
+  background-size: cover;
+  background-image: url("/Img/hero.jpg");
+  width: 100%;
+  height: 350px;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  clear: both;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px; }
+  .hero .hero_text, .productsHero .hero_text, .contactHero .hero_text, .adminHero .hero_text {
+    background-color: rgba(7, 40, 59, 0.87);
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around; }
+    .hero .hero_text h1, .productsHero .hero_text h1, .contactHero .hero_text h1, .adminHero .hero_text h1 {
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 1.5rem;
+      width: 80%;
+      text-align: center; }
+    .hero .hero_text p, .productsHero .hero_text p, .contactHero .hero_text p, .adminHero .hero_text p {
+      text-align: center;
+      color: #D9A892;
+      font-size: 1.5rem;
+      width: 90%; }
+    @media (min-width: 820px) {
+      .hero .hero_text h1, .productsHero .hero_text h1, .contactHero .hero_text h1, .adminHero .hero_text h1, .hero .hero_text p, .productsHero .hero_text p, .contactHero .hero_text p, .adminHero .hero_text p {
+        font-size: 2rem; } }
+
+.productsHero {
+  background-image: url("/Img/hero3.jpg");
+  background-position: 0 30%;
+  margin-bottom: 20px; }
+  .productsHero p {
+    font-size: 2rem; }
+
+.contactHero {
+  background-image: url("/Img/hero2.jpg");
+  margin-bottom: 20px; }
+  .contactHero p {
+    font-size: 2rem; }
+
+.adminHero {
+  background-image: url("/Img/hero4.jpg");
+  background-size: 100% 1200px;
+  margin-bottom: 20px;
+  background-position: 0 30%; }
+  .adminHero p {
+    font-size: 2rem; }
+
+.wrapper {
+  max-width: 553px;
+  margin: 60px auto 70px;
+  padding: 20px 50px 40px;
+  background-color: #D9A892; }
+  @media (min-width: 570px) {
+    .wrapper {
+      max-width: 506px; } }
+  @media (min-width: 820px) {
+    .wrapper {
+      max-width: 400px; } }
+  .wrapper .slider {
+    background-color: #D9A892; }
+    .wrapper .slider div {
+      display: flex; }
+      .wrapper .slider div .mySlides {
+        max-height: 600px;
+        max-width: 600px;
+        align-self: center;
+        justify-self: center;
+        overflow: hidden;
+        object-fit: fill; }
+        @media (min-width: 570px) {
+          .wrapper .slider div .mySlides {
+            align-self: center;
+            justify-content: center;
+            overflow: hidden; } }
+
+#contactform {
+  background-color: rgba(217, 169, 146, 0.931);
+  padding: 20px;
+  border-radius: 5%;
+  margin: 20px auto; }
+  @media (min-width: 820px) {
+    #contactform {
+      max-width: 1000px; } }
+  #contactform #personalinformation {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2rem;
+    width: 80%;
+    font-weight: bold; }
+  #contactform div {
+    display: flex;
+    flex-direction: column;
+    padding: 20px; }
+    #contactform div label, #contactform div input {
+      line-height: 2rem;
+      font-size: 1.5rem;
+      font-weight: bold; }
+    #contactform div input {
+      border: 1px solid #5D616C; }
+  #contactform #commentEntry {
+    display: flex;
+    flex-direction: column; }
+    #contactform #commentEntry .textarea__label {
+      line-height: 2rem;
+      font-size: 1.25rem; }
+    #contactform #commentEntry textarea {
+      max-width: 100%;
+      border: 1px solid #5D616C; }
+    #contactform #commentEntry .submit {
+      border-radius: 100%;
+      height: 100px;
+      width: 100px;
+      background-color: #DFEBE5;
+      color: #08283A;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1.5rem;
+      margin: 20px; }
+
+.formHeader {
+  background-color: rgba(7, 40, 59, 0.87);
+  display: flex;
+  margin: 0 40px; }
+  .formHeader .switchButtons {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    margin: 0 auto 0 10%; }
+    .formHeader .switchButtons .switch {
+      border-radius: 100%;
+      height: 85px;
+      width: 85px;
+      background-color: #DFEBE5;
+      color: #08283A;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1.15rem;
+      align-self: center; }
+  .formHeader .productForm {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    margin-right: 40px;
+    background-color: rgba(7, 40, 59, 0.87); }
+    .formHeader .productForm .formSelect {
+      vertical-align: center;
+      padding: 0 15px; }
+      .formHeader .productForm .formSelect label {
+        margin: 0;
+        font-weight: bold;
+        font-size: 1.5em;
+        padding-right: 15px;
+        color: #DFEBE5; }
+    .formHeader .productForm .selector {
+      border: none;
+      font-family: 'Ubuntu', sans-serif;
+      color: #08283A;
+      line-height: 2rem;
+      font-size: 1.25rem;
+      background-color: rgba(217, 169, 146, 0.913); }
+    .formHeader .productForm .submit {
+      border-radius: 100%;
+      height: 70px;
+      width: 70px;
+      background-color: #DFEBE5;
+      color: #08283A;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1.15rem;
+      align-self: center; }
+
+.productForm {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  margin: 0 40px;
+  background-color: rgba(7, 40, 59, 0.87); }
+  .productForm .formSelect {
+    vertical-align: center;
+    padding: 0 15px; }
+    .productForm .formSelect label {
+      margin: 0;
+      font-weight: bold;
+      font-size: 1.5em;
+      padding-right: 15px;
+      color: #DFEBE5; }
+  .productForm .selector {
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+    color: #08283A;
+    line-height: 2rem;
+    font-size: 1.25rem;
+    background-color: rgba(217, 169, 146, 0.913); }
+  .productForm .submit {
+    border-radius: 100%;
+    height: 70px;
+    width: 70px;
+    background-color: #DFEBE5;
+    color: #08283A;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.15rem;
+    align-self: center; }
+
+.overlay {
+  display: none; }
+
+.adminContactCards {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+  @media (min-width: 570px) {
+    .adminContactCards {
+      max-width: 80%;
+      margin: 0 auto; } }
+  @media (min-width: 820px) {
+    .adminContactCards {
+      max-width: 80%; } }
+  .adminContactCards .adminContactCard {
+    width: 90%;
+    background-color: #6C6D6F;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 2px 5px #6C6D6F;
+    justify-content: space-around;
+    padding-left: 30px; }
+    .adminContactCards .adminContactCard h2 {
+      font-size: 2rem;
+      color: #D9A892;
+      font-family: 'Shadows Into Light', cursive;
+      padding: 0 10px;
+      margin: 2rem 0 0; }
+    .adminContactCards .adminContactCard p {
+      margin: 2px 10px 10px;
+      color: #DFEBE5;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      font-family: 'Ubuntu', sans-serif; }
+    .adminContactCards .adminContactCard .adminButtons {
+      display: flex; }
+      .adminContactCards .adminContactCard .adminButtons button {
+        margin: 10px;
+        border-radius: 100%;
+        height: 70px;
+        width: 70px;
+        background-color: #DFEBE5;
+        color: #08283A;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.15rem;
+        align-self: center; }
+
+.addButton {
+  font-size: 50px; }
+
+.allCards {
+  max-width: 569px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around; }
+  @media (min-width: 570px) {
+    .allCards {
+      max-width: 768px;
+      margin: 0 auto; } }
+  @media (min-width: 820px) {
+    .allCards {
+      max-width: 1500px; } }
+  .allCards .productCard {
+    width: 350px;
+    background-color: #D9A892;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 2px 5px #6C6D6F; }
+    .allCards .productCard .productCard__title {
+      font-size: 2rem;
+      color: #6C6D6F;
+      text-align: center;
+      font-family: 'Shadows Into Light', cursive;
+      font-weight: bold; }
+    .allCards .productCard .productCard__price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      width: 80px;
+      text-align: center;
+      border-bottom: 1px solid #DFEBE5;
+      margin: 5px;
+      color: #6C6D6F;
+      font-family: 'Shadows Into Light', cursive; }
+    .allCards .productCard .productCard__description {
+      margin: 20px 10px 10px;
+      color: #6C6D6F;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      font-family: 'Ubuntu', sans-serif; }
+    .allCards .productCard img {
+      max-width: 275px;
+      max-height: 300px; }
+
+.adminCards {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+  @media (min-width: 570px) {
+    .adminCards {
+      max-width: 80%;
+      margin: 0 auto; } }
+  @media (min-width: 820px) {
+    .adminCards {
+      max-width: 80%; } }
+  .adminCards .adminCard {
+    width: 100%;
+    background-color: #6C6D6F;
+    margin: 10px;
+    display: flex;
+    box-shadow: 3px 2px 5px #6C6D6F;
+    justify-content: space-around;
+    border: solid 1px black; }
+    .adminCards .adminCard h2 {
+      font-size: 1.25rem;
+      color: #D9A892;
+      font-family: 'Shadows Into Light', cursive;
+      padding: 0 10px;
+      margin: 2rem 0 0; }
+    .adminCards .adminCard p {
+      margin: 2px 10px 10px;
+      color: #DFEBE5;
+      font-size: 1.25rem;
+      line-height: 2.5rem;
+      font-family: 'Ubuntu', sans-serif;
+      border: 2px dashed #D9A892;
+      border-radius: 5px;
+      align-self: center;
+      text-align: center; }
+    .adminCards .adminCard .adminCard__title {
+      width: 200px;
+      vertical-align: middle; }
+    .adminCards .adminCard .adminCard__productImagePath {
+      width: 400px; }
+    .adminCards .adminCard .adminCard__price {
+      width: 100px; }
+    .adminCards .adminCard .adminCard__description {
+      width: 750px; }
+    .adminCards .adminCard .adminButtons {
+      display: flex; }
+      .adminCards .adminCard .adminButtons button {
+        margin: 10px;
+        border-radius: 100%;
+        height: 70px;
+        width: 70px;
+        background-color: #DFEBE5;
+        color: #08283A;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.15rem;
+        align-self: center; }
+  .adminCards .adminContactCard .adminButtons,
+  .adminCards .adminCard .adminButtons {
+    display: flex; }
+    .adminCards .adminContactCard .adminButtons button,
+    .adminCards .adminCard .adminButtons button {
+      margin: 10px;
+      border-radius: 100%;
+      height: 70px;
+      width: 70px;
+      background-color: #DFEBE5;
+      color: #08283A;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1.15rem;
+      align-self: center; }
+
+footer {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(7, 40, 59, 0.87);
+  bottom: 0; }
+  footer nav {
+    text-decoration: underline; }
+    footer nav .footerUl {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 0;
+      width: 100%;
+      font-weight: bold;
+      line-height: 2rem;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      vertical-align: center;
+      list-style: none;
+      text-decoration: none; }
+      footer nav .footerUl .footerLink {
+        color: #D9A892;
+        margin: 10px; }
+  footer p {
+    margin: 0;
+    color: #D9A892;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold; }
+
+html {
+  background-image: url("/Img/backgroundImage7.jpg");
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }

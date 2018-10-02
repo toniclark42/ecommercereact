@@ -1,0 +1,63 @@
+$screen-md-min: 570px;
+    $screen-sm-max: ($screen-md-min - 1);
+    $screen-lg-min: 820px;
+    $screen-md-max: ($screen-lg-min - 1);
+
+header{
+    nav {
+        font-family: 'Shadows Into Light', cursive;
+        width: 100%;
+        text-align: center;
+        align-self: center;
+        color: #DFEBE5;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 15px 0;
+            width: 100%;
+            font-weight: bold;
+            line-height: 3rem;
+            font-size: 2rem;
+            background-color: hsla(202, 79%, 13%, 0.87);
+            
+            li, button {
+                list-style: none;
+                vertical-align: middle;
+                justify-content: center;
+                width: 100%;
+                transition-property: font-size;
+                transition-duration: .5s;
+                
+
+                a, a:visited {
+                    line-height: 2rem;
+                    color: #DFEBE5;
+                    text-decoration: none;
+                    
+                }  
+            }
+
+            button {
+                border: none;
+                font-family: 'Ubuntu', sans-serif;
+                color: #08283A;
+                font-weight: bold;
+                line-height: 2rem;
+                font-size: 1.25rem;
+                background-color: rgba(217, 169, 146, 0.913);
+                border-radius: 25px;
+                margin-right: 10px;
+            }
+
+            li:hover {
+                font-size: 2.5rem
+                // transition-property: font-size;
+                // transition-duration: 2s;
+            // transition-timing-function: linear;
+            // transition-delay: 1s;
+            }
+        } 
+    }
+}

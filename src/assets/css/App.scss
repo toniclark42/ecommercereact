@@ -1,0 +1,26 @@
+
+@import "../partials/_nav";
+@import "../partials/_hero";
+@import "../partials/_slider";
+@import "../partials/_contact";
+@import "../partials/_productForm";
+@import "../partials/cards/_contactCards";
+@import "../partials/cards/_productCards";
+@import "../partials/_footer";
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
+%mediaQueries{
+    $screen-md-min: 570px;
+    $screen-sm-max: ($screen-md-min - 1);
+    $screen-lg-min: 820px;
+    $screen-md-max: ($screen-lg-min - 1);
+}
+
+
+html {
+    background-image: url('/Img/backgroundImage7.jpg');
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

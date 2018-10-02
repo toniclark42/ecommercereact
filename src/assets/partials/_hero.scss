@@ -1,0 +1,134 @@
+    $screen-md-min: 570px;
+    $screen-sm-max: ($screen-md-min - 1);
+    $screen-lg-min: 820px;
+    $screen-md-max: ($screen-lg-min - 1);
+
+    %hero{
+        color: #DFEBE5;
+        background-size: cover;
+        background-image: url('/Img/hero.jpg');
+        width: 100%;
+        height: 350px;
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        clear: both; 
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+        
+    
+        .hero_text {
+            background-color: hsla(202, 79%, 13%, 0.87);
+            width: 80%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-around;
+    
+            h1{
+                
+                font-family: 'Ubuntu', sans-serif;
+                font-size: 1.5rem;
+                width: 80%;
+                text-align: center;
+            }
+        
+            p {
+                text-align: center;
+                color: #D9A892;
+                font-size: 1.5rem; 
+                width: 90%;       
+            }
+    
+            @media (min-width: $screen-lg-min) {      
+                h1, p{
+                    font-size: 2rem;
+                }       
+            }
+        }
+    }
+
+    
+    .hero {
+        @extend %hero;
+    }
+    
+    .productsHero {
+        @extend %hero;
+        background-image: url('/Img/hero3.jpg');
+        background-position: 0 30%;
+        margin-bottom: 20px;
+        
+        p {
+            font-size: 2rem;
+        }
+    }
+    
+    .contactHero {
+        @extend %hero;
+        background-image: url('/Img/hero2.jpg');
+        margin-bottom: 20px;
+        
+        p {
+            font-size: 2rem;
+        }
+    }
+
+    .adminHero {
+        @extend %hero;
+        background-image: url('/Img/hero4.jpg');
+        background-size: 100% 1200px;
+        margin-bottom: 20px;
+        background-position: 0 30%;
+        
+        p {
+            font-size: 2rem;
+        }
+    }
+    
+    
+    //     .hero {
+    //     color: #DFEBE5;
+    //     background-image: url('/Img/hero.jpg');
+    //     background-size: cover;
+    //     width: 100%;
+    //     height: 200px;
+    //     position: relative;
+    //     background-position: center;
+    //     background-repeat: no-repeat;
+    //     clear: both; 
+    //     display: flex;
+    //     flex-direction: row;
+    
+    //     .hero_text {
+    //         background-color: hsla(202, 79%, 13%, 0.87);
+    //         width: 80%;
+    //         display: flex;
+    //         align-items: center;
+    //         flex-direction: column;
+    //         justify-content: space-around;
+    
+    //         h1{
+                
+    //             font-family: 'Ubuntu', sans-serif;
+    //             font-size: 1.5rem;
+    //             width: 80%;
+    //             text-align: center;
+    //         }
+        
+    //         p {
+    //             text-align: center;
+    //             color: #D9A892;
+    //             font-size: 1.5rem; 
+    //             width: 90%;       
+    //         }
+    
+    //         @media (min-width: $screen-lg-min) {      
+    //             h1, p{
+    //                 font-size: 2rem;
+    //             }       
+    //         }
+    //     }
+    // }

@@ -1,0 +1,69 @@
+$screen-md-min: 570px;
+    $screen-sm-max: ($screen-md-min - 1);
+    $screen-lg-min: 820px;
+    $screen-md-max: ($screen-lg-min - 1);
+
+#contactform{
+    background-color: rgba(217, 169, 146, 0.931);
+    padding: 20px;
+    border-radius: 5%;
+
+    @media (min-width: $screen-lg-min) {
+                max-width: 1000px;
+            }
+            margin:20px auto;
+
+    #personalinformation{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 2rem;
+        width: 80%;
+        font-weight: bold;
+    }
+
+    div{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+
+        label, input {
+            line-height: 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        input {
+            border: 1px solid #5D616C;
+        }
+        
+    }
+
+    #commentEntry {
+        display: flex;
+        flex-direction: column;
+        
+
+        .textarea__label {
+            line-height: 2rem;
+            font-size: 1.25rem;
+            // padding-left: 20px;
+        }
+
+
+        textarea {
+            max-width: 100%;
+            // margin-left: 20px;
+            border: 1px solid #5D616C;
+        }
+
+        .submit {
+            border-radius: 100%;
+            height: 100px;
+            width: 100px;
+            background-color: #DFEBE5;
+            color: #08283A;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1.5rem;
+            margin: 20px;
+        }
+    } 
+}

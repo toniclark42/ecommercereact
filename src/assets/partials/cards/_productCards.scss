@@ -1,0 +1,180 @@
+    $screen-md-min: 570px;
+    $screen-sm-max: ($screen-md-min - 1);
+    $screen-lg-min: 820px;
+    $screen-md-max: ($screen-lg-min - 1);
+
+
+.addButton {
+    font-size: 50px;
+}
+
+.allCards {
+    max-width: 569px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    @media (min-width: $screen-md-min) {
+        max-width: 768px;
+        margin: 0 auto;
+     }
+
+     @media (min-width: $screen-lg-min) {
+        max-width: 1500px;
+     }
+
+///Product Card background-color: #5D616C;
+//Product Title and Price color: #D9A892;
+//
+    .productCard {
+        width: 350px;
+        background-color: #D9A892;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 3px 2px 5px #6C6D6F;
+    
+        .productCard__title {
+            font-size: 2rem;
+            color: #6C6D6F;
+            text-align: center;
+            font-family: 'Shadows Into Light', cursive;
+            font-weight: bold;
+        }
+
+        .productCard__price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            width: 80px;
+            text-align: center;
+            border-bottom: 1px solid #DFEBE5;
+            margin: 5px;
+            color: #6C6D6F;
+            font-family: 'Shadows Into Light', cursive;
+        }
+
+        .productCard__description {
+            margin:20px 10px 10px;
+            color: #6C6D6F;
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        img{
+            max-width: 275px;
+            max-height: 300px;
+        }  
+    }
+}
+
+.adminCards {
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    @media (min-width: $screen-md-min) {
+        max-width: 80%;
+        margin: 0 auto;
+     }
+
+     @media (min-width: $screen-lg-min) {
+        max-width: 80%;
+     }
+
+    .adminCard {
+        width: 100%;
+        background-color: #6C6D6F;
+        margin: 10px;
+        display: flex;
+        // flex-direction: row;
+        // align-items: center;
+        box-shadow: 3px 2px 5px #6C6D6F;
+        justify-content: space-around;
+        // padding-left: 30px;
+        border: solid 1px black;
+        
+        
+
+        h2 {
+            font-size: 1.25rem;
+            color: #D9A892;
+            // text-align: center;
+            font-family: 'Shadows Into Light', cursive;
+            padding: 0 10px;
+            margin: 2rem 0 0;
+        }
+
+        p {
+            margin:2px 10px 10px;
+            color: #DFEBE5;
+            font-size: 1.25rem;
+            line-height: 2.5rem;
+            font-family: 'Ubuntu', sans-serif;
+            border: 2px dashed #D9A892; 
+            border-radius: 5px;
+            align-self: center;
+            text-align: center;  
+        }
+
+        .adminCard__title {
+            width: 200px;
+            // min-height: 80%;
+            vertical-align: middle;
+        }
+
+        .adminCard__productImagePath {
+            width: 400px;
+        }
+
+        .adminCard__price {
+            width: 100px;
+        }
+
+        .adminCard__description {
+            width: 750px;
+        }
+
+        .adminButtons {
+            display: flex;
+
+            button{
+                margin: 10px;
+                border-radius: 100%;
+                height: 70px;
+                width: 70px;
+                background-color: #DFEBE5;
+                color: #08283A;
+                font-family: 'Josefin Sans', sans-serif;
+                font-size: 1.15rem;
+                align-self: center;
+            }
+        } 
+    }
+
+    .adminContactCard,
+    .adminCard 
+    {
+        .adminButtons {
+            display: flex;
+
+            button{
+                margin: 10px;
+                border-radius: 100%;
+                height: 70px;
+                width: 70px;
+                background-color: #DFEBE5;
+                color: #08283A;
+                font-family: 'Josefin Sans', sans-serif;
+                font-size: 1.15rem;
+                align-self: center;
+            }
+        }
+    }
+}

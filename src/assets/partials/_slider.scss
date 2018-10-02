@@ -1,0 +1,46 @@
+$screen-md-min: 570px;
+    $screen-sm-max: ($screen-md-min - 1);
+    $screen-lg-min: 820px;
+    $screen-md-max: ($screen-lg-min - 1);
+
+.wrapper {
+    max-width: 553px;
+    margin: 60px auto 70px;
+    padding: 20px 50px 40px;
+    background-color: #D9A892; 
+
+    @media (min-width: $screen-md-min) {
+        max-width: 506px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+        max-width: 400px;
+        
+
+    }
+    
+    .slider {
+        background-color: #D9A892;
+        
+        div {
+            display: flex;
+
+            .mySlides {
+                max-height: 600px;
+                max-width: 600px;
+                align-self: center;
+                justify-self: center;
+                overflow: hidden;
+                object-fit: fill;
+            
+    
+                @media (min-width: $screen-md-min) {
+                    // max-width: 400px;
+                    align-self: center;
+                    justify-content: center;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
