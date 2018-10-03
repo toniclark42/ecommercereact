@@ -66,6 +66,44 @@
     }
 }
 
+
+.overlay {
+    margin: 0 auto;
+    font-size: 1.5rem;
+    position: fixed;
+    height: 720px;
+    width: 84%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #DFEBE5;
+    left: 8%;
+    top: 10%;
+    border: 4px solid #08283A;
+
+    .addProductForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // align-items: center;
+        width: 70%;
+        input {
+            line-height: 2rem;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .submit {
+            border-radius: 100%;
+            height: 70px;
+            width: 70px;
+            background-color: #08283A;
+            color: #DFEBE5;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1.15rem;
+            align-self: center;
+        }
+    } 
+}
 .productForm{
     display: flex;
     justify-content: flex-end;

@@ -87,7 +87,7 @@ app.post('/form_submission',(req,res) => {
 
 app.put('/product/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const {title, description, price, quantity, productType, productCategory, path} = req.body;
+    const {title, description, price, quantity, productType, productCategory, imagePath} = req.body;
     ProductModel.findById(id).then(product => {
         if (!product) {
             return res.status(404).send('unable to find id');

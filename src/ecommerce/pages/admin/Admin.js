@@ -48,6 +48,7 @@ const AdminProducts = (props) => {
               <button className="addButton" onClick={props.handleOverlay}>Add</button>
             </div>
             <div className="overlay">
+              <h2>Add A New Product:</h2>
               <form name="addProductForm" className="addProductForm" method="post" action="http://localhost:3001/Products">
                 <label htmlFor="title" className="addProductInfo">Title:</label> 
                 <input type="text"  id="title" name="title"/>
@@ -55,11 +56,11 @@ const AdminProducts = (props) => {
                 <input type="number"  id="price" name="price"/>
                 <label htmlFor="description" className="addProductInfo">Description:</label> 
                 <input type="text"  id="description" name="description"/>
-                <label htmlFor="imagePath" className="addProductInfo">Path:</label> 
+                <label htmlFor="imagePath" className="addProductInfo">Image Path:</label> 
                 <input type="text"  id="imagePath" name="imagePath"/>
                 <label htmlFor="quantity" className="addProductInfo">Quantity:</label> 
                 <input type="number"  id="quantity" name="quantity"/>
-                <label htmlFor="type" className="addProductInfo">Cake or Cupcakes:</label> 
+                <label htmlFor="type" className="addProductInfo">Cake or Cupcake:</label> 
                 <input type="text"  id="productType" name="productType"/>
                 <label htmlFor="category" className="addProductInfo">Category:</label> 
                 <input type="text"  id="productCategory" name="productCategory"/>

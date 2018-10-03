@@ -5,7 +5,7 @@ const ProductCard = (props) => {
         <div>
         <div className="productCard">
             <h2 className="productCard__title">{props.info.title}</h2>
-            <img src={props.info.path} alt={props.info.description} />
+            <img src={props.info.imagePath} alt={props.info.description} />
             <p className="productCard__price">${props.info.price}</p>
             <p className="productCard__description"> {props.info.description}</p>
         </div>
