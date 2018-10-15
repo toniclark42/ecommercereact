@@ -33,7 +33,6 @@ const ProductSchema = new mongoose.Schema({
     }
 });
 
-
 // model needed for blueprint
 const ProductModel = mongoose.model('product', ProductSchema)
 

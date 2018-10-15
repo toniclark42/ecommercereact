@@ -6,7 +6,7 @@ const Nav = () => {
     return (
         <nav>
             <ul>
-                <li><NavLink to="/" activeStyle={{ color: "#D9A892", borderBottom: "4px solid #DFEBE5)" }} exact>Home</NavLink></li>
+                <li><NavLink to="/" activeStyle={{ color: "#D9A892", borderBottom: "4px solid #DFEBE5" }} exact>Home</NavLink></li>
                 <li><NavLink to="/products" activeStyle={{ color: "#D9A892", borderBottom: "4px solid #DFEBE5" }} exact>Products</NavLink></li>
                 <li><NavLink to="/contact" activeStyle={{ color: "#D9A892", borderBottom: "4px solid #DFEBE5" }} exact>Contact</NavLink></li>
                 {auth0Client.isAuthenticated() ? <li><NavLink to="/admin" activeStyle={{ color: "#D9A892", borderBottom: "4px solid #DFEBE5" }} exact>Admin</NavLink></li> : null}

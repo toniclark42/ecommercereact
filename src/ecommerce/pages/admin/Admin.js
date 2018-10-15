@@ -14,16 +14,16 @@ const AdminProducts = (props) => {
         return (
           <div>
             <div className="adminHero">
-          <div className="hero_text">
-              <h1>Admin Page</h1>
-              <p>Create, Edit, Delete Products!</p>
-          </div>
-        </div> 
-        <div className="formHeader">
-          <div className="switchButtons">
-              <button className="switch" onClick={props.handleToProductAdmin}>Products</button>
-              <button className="switch" onClick={props.handleToContactAdmin}>Contact Submits</button>
-            </div>
+              <div className="hero_text">
+                  <h1>Admin Page</h1>
+                  <p>Create, Edit, Delete Products!</p>
+              </div>
+            </div> 
+            <div className="formHeader">
+              <div className="switchButtons">
+                <button className="switch" onClick={props.handleToProductAdmin}>Products</button>
+                <button className="switch" onClick={props.handleToContactAdmin}>Contact Submits</button>
+              </div>
               <form className="productForm" onSubmit={props.productFilter} >
                 <div className="formSelect">
                   <label htmlFor="productSelector">Type:</label>
@@ -64,7 +64,10 @@ const AdminProducts = (props) => {
                 <input type="text"  id="productType" name="productType"/>
                 <label htmlFor="category" className="addProductInfo">Category:</label> 
                 <input type="text"  id="productCategory" name="productCategory"/>
-                <input className="submit" type="submit" value="submit"/>
+                <div className="overlayButtons">
+                  <input className="submit" type="submit" value="submit"/>
+                  <button className="exitButton" onClick={props.handleOverlayExit}>Exit</button>
+                </div>
               </form>
             </div>
             {/* <div className="adminCards">
@@ -73,7 +76,9 @@ const AdminProducts = (props) => {
             <div className="adminContactCards">
               {props.contactinfos.map(el => <AdminContactCard info={el} key={el._id} />)}
             </div> */}
-            <div>{props.adminSwitch === "Products" ? <div className="adminCards">{props.productType.map(el => <AdminProductCard info={el} key={el._id} handleDeleteProduct={props.handleDeleteProduct} handleAddById={props.handleAddById} />)}</div> : <div className="adminContactCards">{props.contactinfos.map(el => <AdminContactCard info={el} key={el._id} />)}</div>}</div>
+            {props.adminSwitch === "Products" ? 
+              <div className="adminCards">{props.productType.map(el => <AdminProductCard info={el} key={el._id} onEdit={props.onEdit} editId={props.editId} handleFormInput={props.handleFormInput} handleFormSubmit={props.handleFormSubmit} handleDeleteProduct={props.handleDeleteProduct} handleEditProduct={props.handleEditProduct} handleAddById={props.handleAddById} />)}</div> 
+              : <div className="adminContactCards">{props.contactinfos.map(el => <AdminContactCard info={el} key={el._id} />)}</div>}
           </div>
         );
       }

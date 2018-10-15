@@ -167,9 +167,8 @@ header nav {
       margin: 20px; }
 
 .formHeader {
-  background-color: rgba(7, 40, 59, 0.87);
   display: flex;
-  margin: 0 40px; }
+  margin: 10px 40px 30px; }
   .formHeader .switchButtons {
     display: flex;
     width: 200px;
@@ -179,8 +178,8 @@ header nav {
       border-radius: 100%;
       height: 85px;
       width: 85px;
-      background-color: #DFEBE5;
-      color: #08283A;
+      background-color: #08283A;
+      color: #DFEBE5;
       font-family: 'Josefin Sans', sans-serif;
       font-size: 1.15rem;
       align-self: center; }
@@ -189,8 +188,7 @@ header nav {
     justify-content: flex-end;
     align-items: center;
     padding: 20px;
-    margin-right: 40px;
-    background-color: rgba(7, 40, 59, 0.87); }
+    margin-right: 40px; }
     .formHeader .productForm .formSelect {
       vertical-align: center;
       padding: 0 15px; }
@@ -216,6 +214,15 @@ header nav {
       font-family: 'Josefin Sans', sans-serif;
       font-size: 1.15rem;
       align-self: center; }
+  .formHeader .addButton {
+    border-radius: 100%;
+    height: 70px;
+    width: 70px;
+    background-color: #08283A;
+    color: #DFEBE5;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.15rem;
+    align-self: center; }
 
 .overlay {
   margin: 0 auto;
@@ -239,15 +246,22 @@ header nav {
       line-height: 2rem;
       width: 100%;
       margin-bottom: 10px; }
-    .overlay .addProductForm .submit {
-      border-radius: 100%;
-      height: 70px;
-      width: 70px;
-      background-color: #08283A;
-      color: #DFEBE5;
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 1.15rem;
-      align-self: center; }
+    .overlay .addProductForm .overlayButtons {
+      display: flex;
+      width: 400px;
+      align-self: center;
+      justify-content: space-around; }
+      .overlay .addProductForm .overlayButtons .submit,
+      .overlay .addProductForm .overlayButtons .exitButton {
+        border-radius: 100%;
+        height: 70px;
+        width: 70px;
+        background-color: #08283A;
+        color: #DFEBE5;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.15rem;
+        align-self: center;
+        margin: 0; }
 
 .productForm {
   display: flex;

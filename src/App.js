@@ -28,14 +28,21 @@ class App extends Component {
       productType: [],
       contactinfos: [],
       adminSwitch: 'Products',
+      onEdit: false,
+      editId: '',
+      title: '',
+      imagePath: '',
+      price: '',
+      description: '',
     };
     // this.callback = this.callback.bind(this);
     this.productFilter = this.productFilter.bind(this);
     this.handleToContactAdmin = this.handleToContactAdmin.bind(this);
     this.handleToProductAdmin = this.handleToProductAdmin.bind(this);
     this.handleDeleteProduct = this.handleDeleteProduct.bind(this);
-    this.handleAddById = this.handleAddById.bind(this);
+    this.handleOverlayExit = this.handleOverlayExit.bind(this);
     this.handleOverlay = this.handleOverlay.bind(this);
+    this.handleEditProduct = this.handleEditProduct.bind(this);
   }
 
 
@@ -55,7 +62,7 @@ class App extends Component {
           cakes: data,
           productType: data,
           cakeFull: true
-        }, () => console.log(this.state.cakes))
+        })
       })
 
     fetch('http://localhost:3001/form_submission/')
@@ -65,7 +72,7 @@ class App extends Component {
       .then((data) => {
         this.setState ({
           contactinfos: data
-        }, () => console.log(this.state.contactinfos))
+        })
       })
   }
 
@@ -81,13 +88,6 @@ class App extends Component {
     this.setState({
       adminSwitch: SwitchedAdmin
     });
-}
-
-  handleAddById(id) {
-    fetch(`http://localhost:3001/Products/`, {
-      method:'POST'
-    }).then(response => response.json());
-    window.location.reload();
   }
 
   handleDeleteProduct(id) {
@@ -97,6 +97,51 @@ class App extends Component {
     window.location.reload();
   }
 
+  handleEditProduct(id) {
+    let editing = !this.state.onEdit;
+    let editProductId = id;
+    this.setState({
+      onEdit: editing,
+      editId: editProductId
+    })
+  } 
+  
+  handleFormInput = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+  handleFormSubmit = (e, id) => {
+    const {
+      title,
+      price,
+      imagePath,
+      description
+    } = this.state;
+    let reqbody = {
+      title,
+      price,
+      imagePath,
+      description
+    };
+    this.handleEditFetch(id, reqbody);
+    console.log(reqbody)
+  }
+
+  handleEditFetch = (id, reqbody) => {
+    fetch(
+      `http://localhost:3001/product/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(reqbody)
+      }
+    )
+    .then(response => console.log(response))
+    .catch(e => console.log(e))
+  };
+
   handleOverlay() {
     const overlay = document.querySelector('.overlay')
     if (overlay.style.display === 'none' || overlay.style.display === '') {
@@ -105,10 +150,12 @@ class App extends Component {
       overlay.style.display = 'none'
     }
   }
-  
-  // callback (el) {
-  //   return <ProductCard info={el} key={el.productId} />;
-  // }
+
+  handleOverlayExit(e) {
+    e.preventDefault();
+    document.querySelector('.overlay').style.display = 'none'
+ 
+  }
 
   productFilter (e) {
     console.log('this.productFilter')
@@ -169,7 +216,7 @@ class App extends Component {
                 <Admin productType={this.state.productType}  callback={this.callback} cakeFull={this.state.cakeFull} productFilter={this.productFilter}/>
               )} /> */}
               <Route path='/callback' component={Callback} exact/>
-              <SecuredRoute path='/admin' component={Admin} handleToProductAdmin={this.handleToProductAdmin} handleToContactAdmin={this.handleToContactAdmin} handleOverlay={this.handleOverlay} handleDeleteProduct={this.handleDeleteProduct} handleAddById={this.handleAddById} contactinfos={this.state.contactinfos} cakeFull={this.state.cakeFull} handleAdminPage={this.handleAdminPage} adminSwitch={this.state.adminSwitch} productType={this.state.productType} productFilter={this.productFilter} callback={this.callback}/>
+              <SecuredRoute path='/admin' component={Admin} editId={this.state.editId} onEdit={this.state.onEdit} handleFormInput={this.handleFormInput} handleFormSubmit={this.handleFormSubmit} handleOverlayExit={this.handleOverlayExit} handleToProductAdmin={this.handleToProductAdmin} handleToContactAdmin={this.handleToContactAdmin} handleOverlay={this.handleOverlay} handleEditProduct={this.handleEditProduct} handleDeleteProduct={this.handleDeleteProduct} contactinfos={this.state.contactinfos} cakeFull={this.state.cakeFull} handleAdminPage={this.handleAdminPage} adminSwitch={this.state.adminSwitch} productType={this.state.productType} productFilter={this.productFilter} callback={this.callback}/>
             
           </Switch>
           <Footer />
@@ -178,19 +225,6 @@ class App extends Component {
     );
   }
 }
-
-// function ProductCard(props) {
-//   return (
-//     <div>
-//       <div className="productCard adminCard">
-//         <h2 className=" productCard__title adminCard__title">{props.info.title}</h2>
-//         <img src={props.info.productImages.path} alt={props.info.description} />
-//         <p className="productCard__price adminCard__price">${props.info.price}</p>
-//         <p className="productCard__description adminCard__description"> {props.info.description}</p>
-//       </div>
-//     </div>
-//   );
-// }
 
 
 export default App;

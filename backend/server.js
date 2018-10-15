@@ -86,23 +86,23 @@ app.post('/form_submission',(req,res) => {
 
 
 app.put('/product/:id', (req, res) => {
-    const id = parseInt(req.params.id);
+    const id = req.params.id;
     const {title, description, price, quantity, productType, productCategory, imagePath} = req.body;
     ProductModel.findById(id).then(product => {
         if (!product) {
             return res.status(404).send('unable to find id');
         }
-        if (title) {
+        if (title !== '') {
             product.set ({
                 title
             })
         }
-        if (description) {
+        if (description !== '') {
             product.set ({
                 description
             })
         }
-        if (price) {
+        if (price !== '') {
             product.set ({
                 price
             })
@@ -122,12 +122,14 @@ app.put('/product/:id', (req, res) => {
                 productCategory
             })
         }
-        if (imagePath) {
+        if (imagePath !== '') {
             product.set ({
                 imagePath
             })
         }
-        product.save().then(updatedProduct => res.send(updatedProduct)).catch(err => res.status(400).send(err));
+        product.save()
+        .then(updatedProduct => res.send(updatedProduct))
+        .catch(err => res.status(400).send(err));
     })
 })
 
