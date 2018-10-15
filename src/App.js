@@ -65,15 +65,15 @@ class App extends Component {
         })
       })
 
-    fetch('http://localhost:3001/form_submission/')
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        this.setState ({
-          contactinfos: data
-        })
-      })
+  //   fetch('http://localhost:3001/form_submission/')
+  //     .then((response) => {
+  //       return response.json()
+  //     })
+  //     .then((data) => {
+  //       this.setState ({
+  //         contactinfos: data
+  //       })
+  //     })
   }
  
   handleToContactAdmin() {
@@ -166,11 +166,7 @@ class App extends Component {
    var typeArray = this.state.cakes;
     if (document.querySelector('.productSelector').value !== '--' ) {
        typeArray = typeArray.filter(el => {
-        if(el.productType === document.querySelector('.productSelector').value) {
-          return true;
-        } else {
-          return false;
-        }
+        return el.productType === document.querySelector('.productSelector').value
       });
     } 
 

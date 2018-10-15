@@ -11,6 +11,7 @@ const AdminProducts = (props) => {
         // console.log(arrayOfCards);
     //I was getting an accessibility error for not having a label for my selects. I did them correct according to the website but it is still showing wrong
     //https://www.w3.org/WAI/GL/WCAG20/tests/test91.html
+    console.log(props)
         return (
           <div>
             <div className="adminHero">
