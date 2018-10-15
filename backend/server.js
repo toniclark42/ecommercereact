@@ -42,7 +42,7 @@ app.get("/products", (req, res) => {
 //       .then(returnedContacts => res.send(returnedContacts))
 //       .catch(err => res.status(400).send(err));
 //   });
-
+ 
 
 app.delete('/products/:id', (req,res) => {
     const id = req.params.id;
