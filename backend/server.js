@@ -20,7 +20,7 @@ app.get("/products", (req, res, next) => {
   });
 
 
-
+ 
   app.get('/products/:id', (req, res) => {   
     const id = req.params.id;
     ProductModel.findById(id).then(product => {

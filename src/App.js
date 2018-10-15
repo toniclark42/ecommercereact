@@ -75,7 +75,7 @@ class App extends Component {
         })
       })
   }
-
+ 
   handleToContactAdmin() {
       let SwitchedAdmin = "Contact"; 
       this.setState({
