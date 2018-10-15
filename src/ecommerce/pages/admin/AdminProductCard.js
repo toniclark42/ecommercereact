@@ -10,8 +10,8 @@ const AdminProductCard = (props) => {
             <p className="adminCard__price">${props.info.price}</p>
             <p className="adminCard__description"> {props.info.description}</p>
             <div className="adminButtons">
-                <button>Edit</button>
-                <button onClick={() => props.handleDeleteProduct(props.info._id)}>Delete</button>
+                <button onClick={() => props.handleEditProduct(props.info.productID)}>Edit</button>
+                <button onClick={() => props.handleDeleteProduct(props.info.productID)}>Delete</button>
             </div>
         </div>
     );   

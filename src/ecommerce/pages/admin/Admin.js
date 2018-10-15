@@ -11,6 +11,7 @@ const AdminProducts = (props) => {
         // console.log(arrayOfCards);
     //I was getting an accessibility error for not having a label for my selects. I did them correct according to the website but it is still showing wrong
     //https://www.w3.org/WAI/GL/WCAG20/tests/test91.html
+    console.log(props)
         return (
           <div>
             <div className="adminHero">
@@ -73,7 +74,7 @@ const AdminProducts = (props) => {
             <div className="adminContactCards">
               {props.contactinfos.map(el => <AdminContactCard info={el} key={el._id} />)}
             </div> */}
-            <div>{props.adminSwitch === "Products" ? <div className="adminCards">{props.productType.map(el => <AdminProductCard info={el} key={el._id} handleDeleteProduct={props.handleDeleteProduct} handleAddById={props.handleAddById} />)}</div> : <div className="adminContactCards">{props.contactinfos.map(el => <AdminContactCard info={el} key={el._id} />)}</div>}</div>
+            <div>{props.adminSwitch === "Products" ? <div className="adminCards">{props.productType.map(el => <AdminProductCard info={el} key={el._id} handleDeleteProduct={props.handleDeleteProduct} onEdit={props.onEdit} handleEditProduct={props.handleEditProduct} handleAddById={props.handleAddById} />)}</div> : <div className="adminContactCards">{props.contactinfos.map(el => <AdminContactCard info={el} key={el._id} />)}</div>}</div>
           </div>
         );
       }

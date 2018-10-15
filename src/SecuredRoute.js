@@ -10,7 +10,7 @@ function SecuredRoute(props) {
           auth0Client.signIn();
           return <div></div>;
         }
-        return <Component cakeFull={props.cakeFull} handleAddById={props.handleAddById} handleOverlay={props.handleOverlay} handleDeleteProduct={props.handleDeleteProduct} contactinfos={props.contactinfos} handleToContactAdmin={props.handleToContactAdmin} handleToProductAdmin={props.handleToProductAdmin} adminSwitch={adminSwitch} productType={props.productType} productFilter={props.productFilter} callback={props.callback}/>
+        return <Component cakeFull={props.cakeFull} handleAddById={props.handleAddById} onEdit={props.onEdit} handleOverlay={props.handleOverlay} handleDeleteProduct={props.handleDeleteProduct} handleEditProduct={props.handleEditProduct} contactinfos={props.contactinfos} handleToContactAdmin={props.handleToContactAdmin} handleToProductAdmin={props.handleToProductAdmin} adminSwitch={adminSwitch} productType={props.productType} productFilter={props.productFilter} callback={props.callback}/>
     }} />
   );
 }

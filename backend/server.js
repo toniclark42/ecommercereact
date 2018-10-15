@@ -1,23 +1,27 @@
-// const express = require("express");
-// const bodyParser = require("body-parser");
-// require("./db/mongoose");
-// var { ProductModel } = require("./models/products");
-// var cors = require("cors");
-// const app = express();
-// const {contactInfo} = require("./models/contactModel")
+const express = require("express");
+const bodyParser = require("body-parser");
+var cors = require("cors");
+var mysql = require('mysql');
+const app = express();
+const connection = mysql.createConnection({
+    host: 'road2hire.ninja',
+    user: 'r2hstudent',
+    password: 'SbFaGzNgGIE8kfP',
+    database: 'tclark'
+});
 
-// app.use(cors());
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ //For contact form info
-//     extended: true
-//   }));
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ //For contact form info
+    extended: true
+  }));
 
-// app.get("/products", (req, res, next) => {
-//     ProductModel
-//       .find({})
-//       .then(product => res.send(product))
-//       .catch(err => res.status(400).send(err));
-//   });
+app.get("/products", (req, res) => {
+   connection.query('SELECT * from cakes', (error, results) => {
+       if (error) throw error;
+       res.send(JSON.stringify(results));
+   });
+  });
 
 
 
@@ -40,16 +44,13 @@
 //   });
 
 
-// app.delete('/products/:id', (req,res) => {
-//     const id = req.params.id;
-//     ProductModel.findByIdAndDelete(id).then(productDeleted => {
-//         if(productDeleted) {
-//             res.send(productDeleted)
-//         } else {
-//             res.status(404).send('Unable to find id')
-//         }
-//     }).catch(err => res.status(400).send(err.message))
-// })
+app.delete('/products/:id', (req,res) => {
+    const id = req.params.id;
+    connection.query(`DELETE from cakes WHERE productID=${id}`, (error, results) => { 
+        if (error) throw error;
+        res.send(JSON.stringify(results));
+    }); 
+})
 
 // app.post('/products/', (req,res) => {
 //    const {title, description, price, quantity, productType, productCategory, imagePath} = req.body;
@@ -131,5 +132,5 @@
 //     })
 // })
 
-
-//   app.listen(3001)
+ 
+  app.listen(3001)
