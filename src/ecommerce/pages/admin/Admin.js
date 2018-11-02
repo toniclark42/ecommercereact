@@ -55,16 +55,16 @@ const AdminProducts = (props) => {
                 <input type="text"  id="title" name="title"/>
                 <label htmlFor="price" className="addProductInfo">Price:</label> 
                 <input type="number"  id="price" name="price"/>
-                <label htmlFor="description" className="addProductInfo">Description:</label> 
-                <input type="text"  id="description" name="description"/>
-                <label htmlFor="imagePath" className="addProductInfo">Image Path:</label> 
-                <input type="text"  id="imagePath" name="imagePath"/>
                 <label htmlFor="quantity" className="addProductInfo">Quantity:</label> 
                 <input type="number"  id="quantity" name="quantity"/>
                 <label htmlFor="type" className="addProductInfo">Cake or Cupcake:</label> 
                 <input type="text"  id="productType" name="productType"/>
                 <label htmlFor="category" className="addProductInfo">Category:</label> 
                 <input type="text"  id="productCategory" name="productCategory"/>
+                <label htmlFor="imagePath" className="addProductInfo">Image Path:</label> 
+                <input type="text"  id="imagePath" name="imagePath"/>
+                <label htmlFor="description" className="addProductInfo">Description:</label> 
+                <input type="text"  id="description" name="description"/>
                 <div className="overlayButtons">
                   <input className="submit" type="submit" value="submit"/>
                   <button className="exitButton" onClick={props.handleOverlayExit}>Exit</button>
@@ -78,8 +78,8 @@ const AdminProducts = (props) => {
               {props.contactinfos.map(el => <AdminContactCard info={el} key={el._id} />)}
             </div> */}
             {props.adminSwitch === "Products" ? 
-              <div className="adminCards">{props.productType.map(el => <AdminProductCard info={el} key={el._id} onEdit={props.onEdit} editId={props.editId} handleFormInput={props.handleFormInput} handleFormSubmit={props.handleFormSubmit} handleDeleteProduct={props.handleDeleteProduct} handleEditProduct={props.handleEditProduct} handleAddById={props.handleAddById} />)}</div> 
-              : <div className="adminContactCards">{props.contactinfos.map(el => <AdminContactCard info={el} key={el._id} />)}</div>}
+              <div className="adminCards">{props.productType.map(el => <AdminProductCard info={el} key={el.productID} onEdit={props.onEdit} editId={props.editId} handleFormInput={props.handleFormInput} handleFormSubmit={props.handleFormSubmit} handleDeleteProduct={props.handleDeleteProduct} handleEditProduct={props.handleEditProduct} handleAddById={props.handleAddById} />)}</div> 
+              : <div className="adminContactCards">{props.contactinfos.map(el => <AdminContactCard info={el} key={el.productID} />)}</div>}
           </div>
         );
       }

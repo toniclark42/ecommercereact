@@ -65,15 +65,15 @@ class App extends Component {
         })
       })
 
-  //   fetch('http://localhost:3001/form_submission/')
-  //     .then((response) => {
-  //       return response.json()
-  //     })
-  //     .then((data) => {
-  //       this.setState ({
-  //         contactinfos: data
-  //       })
-  //     })
+    fetch('http://localhost:3001/form_submission/')
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        this.setState ({
+          contactinfos: data
+        })
+      })
   }
  
   handleToContactAdmin() {
@@ -97,12 +97,16 @@ class App extends Component {
     window.location.reload();
   }
 
-  handleEditProduct(id) {
+  handleEditProduct(id, title, price, imagePath, description) {
     let editing = !this.state.onEdit;
     let editProductId = id;
     this.setState({
       onEdit: editing,
-      editId: editProductId
+      editId: editProductId,
+      title: title,
+      price: price,
+      imagePath: imagePath,
+      description: description
     })
   } 
   
@@ -111,6 +115,7 @@ class App extends Component {
   };
 
   handleFormSubmit = (e, id) => {
+    console.log(this.state);
     const {
       title,
       price,
@@ -131,7 +136,7 @@ class App extends Component {
     fetch(
       `http://localhost:3001/product/${id}`,
       {
-        method: "PUT",
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json"
         },
@@ -212,7 +217,12 @@ class App extends Component {
                 <Admin productType={this.state.productType}  callback={this.callback} cakeFull={this.state.cakeFull} productFilter={this.productFilter}/>
               )} /> */}
               <Route path='/callback' component={Callback} exact/>
-              <SecuredRoute path='/admin' component={Admin} editId={this.state.editId} onEdit={this.state.onEdit} handleFormInput={this.handleFormInput} handleFormSubmit={this.handleFormSubmit} handleOverlayExit={this.handleOverlayExit} handleToProductAdmin={this.handleToProductAdmin} handleToContactAdmin={this.handleToContactAdmin} handleOverlay={this.handleOverlay} handleEditProduct={this.handleEditProduct} handleDeleteProduct={this.handleDeleteProduct} contactinfos={this.state.contactinfos} cakeFull={this.state.cakeFull} handleAdminPage={this.handleAdminPage} adminSwitch={this.state.adminSwitch} productType={this.state.productType} productFilter={this.productFilter} callback={this.callback}/>
+              <SecuredRoute path='/admin' component={Admin} editId={this.state.editId} onEdit={this.state.onEdit} handleFormInput={this.handleFormInput} 
+              handleFormSubmit={this.handleFormSubmit} handleOverlayExit={this.handleOverlayExit} handleToProductAdmin={this.handleToProductAdmin} 
+              handleToContactAdmin={this.handleToContactAdmin} handleOverlay={this.handleOverlay} handleEditProduct={this.handleEditProduct} 
+              handleDeleteProduct={this.handleDeleteProduct} contactinfos={this.state.contactinfos} cakeFull={this.state.cakeFull} 
+              handleAdminPage={this.handleAdminPage} adminSwitch={this.state.adminSwitch} productType={this.state.productType} 
+              productFilter={this.productFilter} callback={this.callback}/>
             
           </Switch>
           <Footer />

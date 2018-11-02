@@ -11,9 +11,6 @@ const AdminContactCard = (props) => {
             <p>{props.info.emailInput}</p>
             <h2>Comment/Question</h2>
             <p> {props.info.comments}</p>
-            <div className="adminButtons">
-                <button>Delete</button>
-            </div>
         </div>
     );   
 }
