@@ -12,7 +12,7 @@ import SecuredRoute from './SecuredRoute';
 
 ///////////To get everything running
             //in ecommercereact "npm start"
-            //in css "npm run watch-css"
+            //in css "npm run watch-css" (if not on current react update)
             //in bin "./mongod -dbpath ../../mongo-data/"
             //in backend "node server.js"
 
@@ -212,9 +212,6 @@ class App extends Component {
                 <Products productType={this.state.productType}  callback={this.callback} cakeFull={this.state.cakeFull} productFilter={this.productFilter}/>
               )} />
               <Route path="/contact" component={Contact} exact />
-              {/* <Route path="/admin" render={() => (
-                <Admin productType={this.state.productType}  callback={this.callback} cakeFull={this.state.cakeFull} productFilter={this.productFilter}/>
-              )} /> */}
               <Route path='/callback' component={Callback} exact/>
               <SecuredRoute path='/admin' component={Admin} editId={this.state.editId} onEdit={this.state.onEdit} handleFormInput={this.handleFormInput} handleFormSubmit={this.handleFormSubmit} handleOverlayExit={this.handleOverlayExit} handleToProductAdmin={this.handleToProductAdmin} handleToContactAdmin={this.handleToContactAdmin} handleOverlay={this.handleOverlay} handleEditProduct={this.handleEditProduct} handleDeleteProduct={this.handleDeleteProduct} contactinfos={this.state.contactinfos} cakeFull={this.state.cakeFull} handleAdminPage={this.handleAdminPage} adminSwitch={this.state.adminSwitch} productType={this.state.productType} productFilter={this.productFilter} callback={this.callback}/>
             

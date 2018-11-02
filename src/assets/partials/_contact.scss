@@ -7,12 +7,12 @@ $screen-md-min: 570px;
     background-color: rgba(217, 169, 146, 0.931);
     padding: 20px;
     border-radius: 5%;
+    margin:20px auto;
 
     @media (min-width: $screen-lg-min) {
-                max-width: 1000px;
-            }
-            margin:20px auto;
-
+        max-width: 1000px;
+    }
+        
     #personalinformation{
         font-family: 'Ubuntu', sans-serif;
         font-size: 2rem;
@@ -34,24 +34,19 @@ $screen-md-min: 570px;
         input {
             border: 1px solid #5D616C;
         }
-        
     }
 
     #commentEntry {
         display: flex;
         flex-direction: column;
-        
 
         .textarea__label {
             line-height: 2rem;
             font-size: 1.25rem;
-            // padding-left: 20px;
         }
-
 
         textarea {
             max-width: 100%;
-            // margin-left: 20px;
             border: 1px solid #5D616C;
         }
 

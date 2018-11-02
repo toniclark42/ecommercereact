@@ -3,7 +3,6 @@
     $screen-lg-min: 820px;
     $screen-md-max: ($screen-lg-min - 1);
 
-
 .addButton {
     font-size: 50px;
 }
@@ -27,7 +26,7 @@
 
 ///Product Card background-color: #5D616C;
 //Product Title and Price color: #D9A892;
-//
+
     .productCard {
         width: 350px;
         background-color: #D9A892;
@@ -75,7 +74,6 @@
     max-width: 90%;
     margin: 0 auto;
     display: flex;
-    // flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
     
@@ -93,19 +91,13 @@
         background-color: #6C6D6F;
         margin: 10px;
         display: flex;
-        // flex-direction: row;
-        // align-items: center;
         box-shadow: 3px 2px 5px #6C6D6F;
         justify-content: space-around;
-        // padding-left: 30px;
         border: solid 1px black;
-        
-        
 
         h2 {
             font-size: 1.25rem;
             color: #D9A892;
-            // text-align: center;
             font-family: 'Shadows Into Light', cursive;
             padding: 0 10px;
             margin: 2rem 0 0;
@@ -125,7 +117,6 @@
 
         .adminCard__title {
             width: 200px;
-            // min-height: 80%;
             vertical-align: middle;
         }
 
@@ -156,10 +147,6 @@
                 align-self: center;
             }
         } 
-
-        input {
-            
-        }
     }
 
     .adminContactCard,

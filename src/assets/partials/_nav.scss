@@ -1,4 +1,4 @@
-$screen-md-min: 570px;
+    $screen-md-min: 570px;
     $screen-sm-max: ($screen-md-min - 1);
     $screen-lg-min: 820px;
     $screen-md-max: ($screen-lg-min - 1);
@@ -30,7 +30,6 @@ header{
                 transition-property: font-size;
                 transition-duration: .5s;
                 
-
                 a, a:visited {
                     line-height: 2rem;
                     color: #DFEBE5;
@@ -53,10 +52,6 @@ header{
 
             li:hover {
                 font-size: 2.5rem
-                // transition-property: font-size;
-                // transition-duration: 2s;
-            // transition-timing-function: linear;
-            // transition-delay: 1s;
             }
         } 
     }

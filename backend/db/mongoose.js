@@ -3,7 +3,7 @@
 
 // const mongoose = require('mongoose'); //npm install --save mongoose
 
-// //tell mongoose we watnt to use promises instead of callbacks
+// //tell mongoose we want to use promises instead of callbacks
 // mongoose.Promise = global.Promise;
 
 // //('will create database', will make error go away)

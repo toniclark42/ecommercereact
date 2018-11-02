@@ -1,4 +1,4 @@
-$screen-md-min: 570px;
+    $screen-md-min: 570px;
     $screen-sm-max: ($screen-md-min - 1);
     $screen-lg-min: 820px;
     $screen-md-max: ($screen-lg-min - 1);
@@ -15,8 +15,6 @@ $screen-md-min: 570px;
 
     @media (min-width: $screen-lg-min) {
         max-width: 400px;
-        
-
     }
     
     .slider {
@@ -33,9 +31,7 @@ $screen-md-min: 570px;
                 overflow: hidden;
                 object-fit: fill;
             
-    
                 @media (min-width: $screen-md-min) {
-                    // max-width: 400px;
                     align-self: center;
                     justify-content: center;
                     overflow: hidden;
